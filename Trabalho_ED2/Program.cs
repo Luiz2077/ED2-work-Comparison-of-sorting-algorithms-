@@ -5,7 +5,6 @@ using static Trabalho_ED2.Meusort;
 
 namespace Trabalho_ED2 {
     internal class Program {
-        private static readonly Random random = new Random();
 
         static void Main(string[] args) {
             int[] tamanhosVetor = { 1000, 5000, 10000, 50000, 100000, 500000, 1000000 };
@@ -118,9 +117,9 @@ namespace Trabalho_ED2 {
 
         static int[] Generate(int length, int seed) {
             int[] vector = new int[length];
-
+            Random randomSeed = new Random(seed);  
             for (int i = 0; i < length; i++) {
-                vector[i] = random.Next(seed);
+                vector[i] = randomSeed.Next(length);
             }
 
             return vector;
